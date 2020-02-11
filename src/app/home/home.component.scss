@@ -1,0 +1,101 @@
+$accent: rgb(255, 255, 108);
+
+#home {
+  display: grid;
+  place-items: center;
+  height: 90vh;
+  width: 100%;
+  overflow: hidden;
+
+  .container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .text {
+      width: 50%;
+      h1 {
+        font-size: 60px;
+        text-align: center;
+        font-weight: bold;
+      }
+
+      p {
+        text-align: center;
+        font-size: 30px;
+
+        span {
+          color: rgb(255, 255, 108);
+        }
+      }
+    }
+    .image {
+      width: 50%;
+
+      #logo-border {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+        animation: stroke 2s ease forwards;
+      }
+
+      #logo-text {
+        stroke-dasharray: 2000;
+        stroke-dashoffset: 2000;
+        animation: stroke 2s ease forwards 2s, text-fill 2s ease forwards 3s;
+
+        @keyframes text-fill {
+          from {
+            fill: transparent;
+          }
+
+          to {
+            fill: black;
+          }
+        }
+      }
+
+      #logo-box {
+        animation: fill 4s ease forwards 2s;
+        @keyframes fill {
+          from {
+            fill: transparent;
+            clip-path: circle(0% at 400% 400%);
+          }
+
+          to {
+            fill: $accent;
+            clip-path: circle(75%);
+          }
+        }
+      }
+
+      #logo-3d {
+        stroke-dasharray: 2231.5361328125;
+        stroke-dashoffset: -2231.5361328125;
+        animation: stroke 2s ease forwards 2s,
+          stroke-disappear 4s ease forwards 5s;
+
+        @keyframes stroke-disappear {
+          to {
+            stroke-dashoffset: -2231.5361328125;
+          }
+        }
+      }
+
+      @keyframes stroke {
+        to {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      animation: tilt 2s ease forwards 3.5s;
+
+      @keyframes tilt {
+        to {
+          transform: rotateZ(-10deg);
+        }
+      }
+    }
+  }
+}
