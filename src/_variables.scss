@@ -4,10 +4,6 @@ $colours: (
   shadow-text: #3a5ae9
 );
 
-$fontcolours: (
-  primary: #ffffff
-);
-
 $padding: 10px;
 $margin: 10px;
 
@@ -17,4 +13,14 @@ $margin: 10px;
 
 @function fontcolour($colour-name) {
   @return map-get($map: $fontcolours, $key: $colour-name);
+}
+
+// ************ Responsive ************
+
+$desktop: 900px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
 }
