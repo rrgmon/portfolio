@@ -1,13 +1,13 @@
+@import "./variables";
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-$primary: #1f1f1f;
-
 body {
-  background-color: $primary;
+  background-color: colour(primary);
   color: white;
   font-size: 18px;
   font-family: Poppins;

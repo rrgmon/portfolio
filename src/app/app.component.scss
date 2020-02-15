@@ -1,39 +1,47 @@
-$accent: #f8dc3d;
+@import "../variables";
 
-header {
-  height: 10vh;
-  padding: 0.5em 0;
-  background-color: darken($color: #1f1f1f, $amount: 2%);
-  .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+#main {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
 
-    width: 80%;
-    margin: auto;
-
-    .logo {
-      text-decoration: none;
-      color: white;
-      height: 100%;
-      svg {
-        width: 50px;
-      }
-    }
-
+  header {
     nav {
-      ul {
+      background-color: darken($color: colour(primary), $amount: 2%);
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      height: 100vh;
+
+      img {
+        width: 50px;
+        height: 50px;
+        margin: $margin 0;
+      }
+
+      .sidebar-page-list,
+      .sidebar-contact-list {
         display: flex;
-        list-style-type: none;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
 
         li {
-          padding: 0 1em;
-          a {
-            color: white;
-            text-decoration: none;
+          list-style-type: none;
+          margin: $margin 0;
 
-            &:hover {
-              color: $accent;
+          .sidebar-page-links,
+          .sidebar-contact-links {
+            .icon {
+              width: 20px;
+              height: 20px;
+              color: lighten($color: colour(primary), $amount: 40%);
+
+              &:hover {
+                color: colour(accent);
+              }
             }
           }
         }
