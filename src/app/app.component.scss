@@ -1,3 +1,5 @@
+$accent: #f8dc3d;
+
 header {
   height: 10vh;
   padding: 0.5em 0;
@@ -13,9 +15,9 @@ header {
     .logo {
       text-decoration: none;
       color: white;
-      img {
+      height: 100%;
+      svg {
         width: 50px;
-        height: 50px;
       }
     }
 
@@ -31,7 +33,7 @@ header {
             text-decoration: none;
 
             &:hover {
-              color: rgb(255, 255, 108);
+              color: $accent;
             }
           }
         }
