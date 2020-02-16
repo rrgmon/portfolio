@@ -1,19 +1,16 @@
 @import "../../variables";
 
 #about {
+  display: grid;
+  place-items: center;
   height: 100vh;
-  width: 96vw;
-  margin: auto;
-  overflow: hidden;
-  perspective: 1000px;
+  width: 100%;
+  @include desktop {
+    height: 100vh;
+    width: 96vw;
+  }
 
   .container {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-
     .text {
       h1 {
         font-size: 30px;
@@ -57,8 +54,12 @@
     .image {
       display: none;
     }
+  }
+}
 
-    @include desktop {
+@include desktop {
+  #about {
+    .container {
       height: 100%;
       width: 100%;
       display: flex;
@@ -66,55 +67,34 @@
       align-items: center;
 
       .text {
-        animation: about-text 1s ease;
-
         h1 {
-          font-size: 40px;
-          animation: about-texth1 1.5s ease;
+          font-size: 30px;
+          animation: text-left 1s ease;
           span {
-            font-size: 60px;
-          }
-
-          @keyframes about-texth1 {
-            from {
-              opacity: 0;
-              transform: translateY(-150%);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0%);
-            }
+            color: colour(accent);
+            font-size: 50px;
           }
         }
 
         p {
-          font-size: 22px;
+          font-size: 16px;
           text-align: justify;
-          animation: about-textp 1.5s ease;
+          animation: text-right 1s ease;
+          font-weight: 100;
+        }
 
-          @keyframes about-textp {
-            from {
-              opacity: 0;
-              transform: translateY(150%);
-            }
-            to {
-              opacity: 1;
-              transform: translateY(0%);
-            }
+        @keyframes text-left {
+          from {
+            opacity: 0;
+            transform: translateX(-150%);
+          }
+          to {
+            opacity: 1;
+            transform: translateX(0%);
           }
         }
-      }
 
-      .image {
-        display: block;
-        text-align: center;
-        animation: about-img 1.5s ease;
-        img {
-          width: 600px;
-          height: 600px;
-        }
-
-        @keyframes about-img {
+        @keyframes text-right {
           from {
             opacity: 0;
             transform: translateX(150%);
@@ -124,93 +104,166 @@
             transform: translateX(0%);
           }
         }
+      }
 
-        #boy-head {
-          animation: boy-head 1s infinite ease-in-out alternate 0.5s;
-          transform-origin: bottom center;
-          transform-box: fill-box;
-          @keyframes boy-head {
-            from {
-              transform: rotateZ(0deg);
+      .image {
+        display: none;
+      }
+
+      @include desktop {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+
+        .text {
+          animation: about-text 1s ease;
+
+          h1 {
+            font-size: 40px;
+            animation: about-texth1 1.5s ease;
+            span {
+              font-size: 60px;
             }
-            to {
-              transform: rotateZ(-20deg);
+
+            @keyframes about-texth1 {
+              from {
+                opacity: 0;
+                transform: translateY(-150%);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0%);
+              }
+            }
+          }
+
+          p {
+            font-size: 22px;
+            text-align: justify;
+            animation: about-textp 1.5s ease;
+
+            @keyframes about-textp {
+              from {
+                opacity: 0;
+                transform: translateY(150%);
+              }
+              to {
+                opacity: 1;
+                transform: translateY(0%);
+              }
             }
           }
         }
 
-        #outer-box1 {
-          animation: outer-box1 2s infinite linear 0.5s;
-          transform-origin: center;
-          transform-box: fill-box;
+        .image {
+          display: block;
+          text-align: center;
+          animation: about-img 1.5s ease;
+          img {
+            width: 600px;
+            height: 600px;
+          }
 
-          @keyframes outer-box1 {
+          @keyframes about-img {
             from {
-              transform: rotateZ(0deg);
+              opacity: 0;
+              transform: translateX(150%);
             }
             to {
-              transform: rotateZ(360deg);
+              opacity: 1;
+              transform: translateX(0%);
             }
           }
-        }
 
-        #outer-box2,
-        #outer-box3 {
-          animation: outer-box23 2s infinite linear 0.5s;
-          transform-origin: center;
-          transform-box: fill-box;
-
-          @keyframes outer-box23 {
-            from {
-              transform: rotateZ(0deg);
-            }
-            to {
-              transform: rotateZ(-360deg);
+          #boy-head {
+            animation: boy-head 1s infinite ease-in-out alternate 0.5s;
+            transform-origin: bottom center;
+            transform-box: fill-box;
+            @keyframes boy-head {
+              from {
+                transform: rotateZ(0deg);
+              }
+              to {
+                transform: rotateZ(-20deg);
+              }
             }
           }
-        }
 
-        #inner-text {
-          animation: inner-text 1s infinite ease-in-out alternate 0.5s;
-          transform-origin: center;
-          transform-box: fill-box;
+          #outer-box1 {
+            animation: outer-box1 2s infinite linear 0.5s;
+            transform-origin: center;
+            transform-box: fill-box;
 
-          @keyframes inner-text {
-            from {
-              transform: rotateZ(-10deg);
-            }
-            to {
-              transform: rotateZ(10deg);
-            }
-          }
-        }
-
-        #inner-circle {
-          animation: inner-circle 4s infinite linear 0.5s;
-          transform-origin: center;
-          transform-box: fill-box;
-
-          @keyframes inner-circle {
-            from {
-              transform: rotateZ(0deg);
-            }
-            to {
-              transform: rotateZ(360deg);
+            @keyframes outer-box1 {
+              from {
+                transform: rotateZ(0deg);
+              }
+              to {
+                transform: rotateZ(360deg);
+              }
             }
           }
-        }
 
-        #inner-box {
-          animation: inner-box 1s infinite linear alternate 0.5s;
-          transform-origin: center;
-          transform-box: fill-box;
+          #outer-box2,
+          #outer-box3 {
+            animation: outer-box23 2s infinite linear 0.5s;
+            transform-origin: center;
+            transform-box: fill-box;
 
-          @keyframes inner-box {
-            from {
-              transform: translateX(-10px);
+            @keyframes outer-box23 {
+              from {
+                transform: rotateZ(0deg);
+              }
+              to {
+                transform: rotateZ(-360deg);
+              }
             }
-            to {
-              transform: translateX(10px);
+          }
+
+          #inner-text {
+            animation: inner-text 1s infinite ease-in-out alternate 0.5s;
+            transform-origin: center;
+            transform-box: fill-box;
+
+            @keyframes inner-text {
+              from {
+                transform: rotateZ(-10deg);
+              }
+              to {
+                transform: rotateZ(10deg);
+              }
+            }
+          }
+
+          #inner-circle {
+            animation: inner-circle 4s infinite linear 0.5s;
+            transform-origin: center;
+            transform-box: fill-box;
+
+            @keyframes inner-circle {
+              from {
+                transform: rotateZ(0deg);
+              }
+              to {
+                transform: rotateZ(360deg);
+              }
+            }
+          }
+
+          #inner-box {
+            animation: inner-box 1s infinite linear alternate 0.5s;
+            transform-origin: center;
+            transform-box: fill-box;
+
+            @keyframes inner-box {
+              from {
+                transform: translateX(-10px);
+              }
+              to {
+                transform: translateX(10px);
+              }
             }
           }
         }
