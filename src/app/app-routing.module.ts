@@ -1,21 +1,19 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { HomeComponent } from "./home/home.component";
-import { AboutComponent } from "./about/about.component";
-import { ProjectsComponent } from "./projects/projects.component";
 
 const routes: Routes = [
   {
     path: "",
-    component: HomeComponent
+    loadChildren: () => import("./home/home.module").then(m => m.HomeModule)
   },
   {
     path: "about",
-    component: AboutComponent
+    loadChildren: () => import("./about/about.module").then(m => m.AboutModule)
   },
   {
     path: "projects",
-    component: ProjectsComponent
+    loadChildren: () =>
+      import("./projects/projects.module").then(m => m.ProjectsModule)
   }
 ];
 
