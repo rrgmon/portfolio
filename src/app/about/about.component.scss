@@ -19,6 +19,7 @@
       align-items: center;
     }
     .text {
+      margin: $margin;
       h1 {
         font-size: 30px;
         font-family: $heading;

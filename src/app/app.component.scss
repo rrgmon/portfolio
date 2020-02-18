@@ -40,9 +40,9 @@
         width: 30px;
         height: 20px;
 
-        right: 0;
+        right: 20px;
         top: 20px;
-        margin: $margin;
+        transform: translate(20%, 20%);
 
         .bar {
           width: 100%;
