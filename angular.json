@@ -113,7 +113,8 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "https://rrgmon.dev"
+            "baseHref": "https://rrgmon.dev",
+            "cname": "rrgmon.dev"
           }
         }
       }
