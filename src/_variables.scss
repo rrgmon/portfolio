@@ -7,12 +7,11 @@ $colours: (
 $padding: 10px;
 $margin: 10px;
 
+$heading: "Poppins", sans-serif;
+$paragraph: "Source Sans Pro", sans-serif;
+
 @function colour($colour-name) {
   @return map-get($map: $colours, $key: $colour-name);
-}
-
-@function fontcolour($colour-name) {
-  @return map-get($map: $fontcolours, $key: $colour-name);
 }
 
 // ************ Responsive ************

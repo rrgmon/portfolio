@@ -73,7 +73,8 @@
               height: 20px;
               color: lighten($color: colour(primary), $amount: 40%);
 
-              &:hover {
+              &:hover,
+              &:active {
                 color: colour(accent);
               }
             }

@@ -10,11 +10,19 @@
     height: 100%;
   }
   .container {
-    svg {
-      width: 350px;
+    h1 {
+      font-size: 60px;
+      margin: $margin;
+      font-family: $heading;
+      text-align: center;
+
+      background-image: url("../../assets/images/construction-text.jpg");
+      background-size: cover;
+      background-clip: text;
+      color: transparent;
 
       @include desktop {
-        width: 1000px;
+        font-size: 150px;
       }
 
       animation: appear 1s ease;
