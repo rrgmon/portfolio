@@ -231,8 +231,12 @@
           animation: stroke 2s ease forwards 2s, disappear 2s ease forwards 5s;
 
           @keyframes disappear {
+            from {
+              stroke-dashoffset: 0;
+            }
+
             to {
-              opacity: 0;
+              stroke-dashoffset: 2231.5361328125;
             }
           }
         }
