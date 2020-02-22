@@ -91,6 +91,17 @@
 
       .sidebar-page-list.active {
         display: flex;
+        animation: list-anim 1s ease forwards;
+      }
+
+      @keyframes list-anim {
+        from {
+          transform: translateX(150%);
+        }
+
+        to {
+          transform: translateX(0%);
+        }
       }
 
       .sidebar-contact-list {
